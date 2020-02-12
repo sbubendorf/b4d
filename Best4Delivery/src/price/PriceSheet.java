@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -154,17 +155,14 @@ public class PriceSheet {
 
 	private String getCellContent(Cell cell) {
 		String value = null;
-		switch(cell.getCellType()) {
-			case Cell.CELL_TYPE_BOOLEAN:
-				value = Boolean.toString(cell.getBooleanCellValue());
-				break;
-			case Cell.CELL_TYPE_NUMERIC:
-				value = String.valueOf(cell.getNumericCellValue());
-				break;
-			case Cell.CELL_TYPE_STRING:
-				value = cell.getStringCellValue();
-				break;
-			default:
+		CellType ct = cell.getCellType();
+		if (CellType.BOOLEAN.equals(ct)) {
+			value = Boolean.toString(cell.getBooleanCellValue());
+		} else if (CellType.NUMERIC.equals(ct)) {
+			value = String.valueOf(cell.getNumericCellValue());
+		} else if (CellType.STRING.equals(ct)) {
+			value = cell.getStringCellValue();
+		} else {
 				value = null;
 		}
 		return value;

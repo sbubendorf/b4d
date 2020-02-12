@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -97,47 +99,47 @@ public class ExcelGenerator extends HttpServlet {
 			
 			XSSFCellStyle styleRangeTitel = workbook.createCellStyle();
 			styleRangeTitel.setFillForegroundColor(colorGrey);
-			styleRangeTitel.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+			styleRangeTitel.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 			styleRangeTitel.setFont(fontBold);
-			styleRangeTitel.setBorderTop(CellStyle.BORDER_THIN);
-			styleRangeTitel.setBorderBottom(CellStyle.BORDER_THIN);
+			styleRangeTitel.setBorderTop(BorderStyle.THIN);
+			styleRangeTitel.setBorderBottom(BorderStyle.THIN);
 			styleRangeTitel.setAlignment(HorizontalAlignment.CENTER);
 
 			XSSFCellStyle styleFromToTitel = workbook.createCellStyle();
 			styleFromToTitel.setFillForegroundColor(colorYellow);
-			styleFromToTitel.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+			styleFromToTitel.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 			styleFromToTitel.setFont(fontBold);
-			styleFromToTitel.setBorderTop(CellStyle.BORDER_THIN);
-			styleFromToTitel.setBorderBottom(CellStyle.BORDER_THIN);
-			styleFromToTitel.setBorderLeft(CellStyle.BORDER_THIN);
-			styleFromToTitel.setBorderRight(CellStyle.BORDER_THIN);
+			styleFromToTitel.setBorderTop(BorderStyle.THIN);
+			styleFromToTitel.setBorderBottom(BorderStyle.THIN);
+			styleFromToTitel.setBorderLeft(BorderStyle.THIN);
+			styleFromToTitel.setBorderRight(BorderStyle.THIN);
 			styleFromToTitel.setAlignment(HorizontalAlignment.CENTER);
 
 			XSSFCellStyle styleDestinationTitel = workbook.createCellStyle();
 			styleDestinationTitel.setFillForegroundColor(colorRed);
-			styleDestinationTitel.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+			styleDestinationTitel.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 			styleDestinationTitel.setFont(fontBold);
-			styleDestinationTitel.setBorderTop(CellStyle.BORDER_THIN);
-			styleDestinationTitel.setBorderBottom(CellStyle.BORDER_THIN);
-			styleDestinationTitel.setBorderLeft(CellStyle.BORDER_THIN);
-			styleDestinationTitel.setBorderRight(CellStyle.BORDER_THIN);
+			styleDestinationTitel.setBorderTop(BorderStyle.THIN);
+			styleDestinationTitel.setBorderBottom(BorderStyle.THIN);
+			styleDestinationTitel.setBorderLeft(BorderStyle.THIN);
+			styleDestinationTitel.setBorderRight(BorderStyle.THIN);
 			styleDestinationTitel.setAlignment(HorizontalAlignment.CENTER);
 
 			XSSFCellStyle styleDepartureTitel = workbook.createCellStyle();
 			styleDepartureTitel.setFillForegroundColor(colorGreen);
-			styleDepartureTitel.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+			styleDepartureTitel.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 			styleDepartureTitel.setFont(fontBold);
-			styleDepartureTitel.setBorderTop(CellStyle.BORDER_THIN);
-			styleDepartureTitel.setBorderBottom(CellStyle.BORDER_THIN);
-			styleDepartureTitel.setBorderLeft(CellStyle.BORDER_THIN);
-			styleDepartureTitel.setBorderRight(CellStyle.BORDER_THIN);
+			styleDepartureTitel.setBorderTop(BorderStyle.THIN);
+			styleDepartureTitel.setBorderBottom(BorderStyle.THIN);
+			styleDepartureTitel.setBorderLeft(BorderStyle.THIN);
+			styleDepartureTitel.setBorderRight(BorderStyle.THIN);
 			styleDepartureTitel.setAlignment(HorizontalAlignment.CENTER);
 			
 			XSSFCellStyle stylePrice = workbook.createCellStyle();
-			stylePrice.setBorderTop(CellStyle.BORDER_THIN);
-			stylePrice.setBorderBottom(CellStyle.BORDER_THIN);
-			stylePrice.setBorderLeft(CellStyle.BORDER_THIN);
-			stylePrice.setBorderRight(CellStyle.BORDER_THIN);
+			stylePrice.setBorderTop(BorderStyle.THIN);
+			stylePrice.setBorderBottom(BorderStyle.THIN);
+			stylePrice.setBorderLeft(BorderStyle.THIN);
+			stylePrice.setBorderRight(BorderStyle.THIN);
 			stylePrice.setAlignment(HorizontalAlignment.CENTER);
 			
     		String fileName = "b4d-pricesheet-m" + mover.getId() + "-" + isoDepa + "-" + isoDest;
